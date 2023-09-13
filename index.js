@@ -18,12 +18,11 @@ var questionsArr = [
         answer: true
     },    
 ];
+var correct = 0
 function runQuiz() {
-    var correct = questionsArr.answer
-    for (var i = 0; i < questionsArr.length; i++) {
-        var quizQuestion = questionsArr[i]
-        var quizAnswer = confirm(quizQuestion)
-        if (quizAnswer) {
+    for (var question in questionsArr) {
+        var quizAnswer = confirm(question)    
+    if (quizAnswer = questionsArr[answer]) {
             correct++
         }
     }   
