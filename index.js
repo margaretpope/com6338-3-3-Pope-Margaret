@@ -11,19 +11,30 @@ var questionsArr = [
         question: "Birmingham was founded in 1871.",
         answer: true
     },
-    {   question: "Martin Luther King, Jr. never came to Birmingham.",
+    {   
+        question: "Martin Luther King, Jr. never came to Birmingham.",
         answer: false
     },
-    {   question: "Michael Jordan played for the Birmingham Barons.",
+    {   
+        question: "Michael Jordan played for the Birmingham Barons.",
         answer: true
-    },    
+    },
+    {
+        question: "Birmingham is called the Magic City.",
+        answer: true
+    },
 ];
-var correct = 0
+var correctAnswer = 0
 function runQuiz() {
-    for (var question in questionsArr) {
-        var quizAnswer = confirm(question)    
-    if (quizAnswer = questionsArr[answer]) {
-            correct++
+    for (var i = 0; i < questionsArr.length; i++) {
+        var quizQuestion = questionsArr[i].question
+        var quizAnswer = questionsArr[i].answer
+        var response = confirm(quizQuestion)
+        if(response === quizAnswer) {
+            correctAnswer++
         }
-    }   
+    }
+    var score = Math.round((correctAnswer / questionsArr.length) * 100)
+    alert("Your score is " + score + "%.")
 }
+       
